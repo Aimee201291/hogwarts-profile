@@ -17,10 +17,10 @@ const routes: Routes = [
         path: 'home',
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
-      /*{
-        path: 'character',
+      {
+        path: 'characters',
         loadChildren: () => import('./character/character.module').then(m => m.CharacterModule)
-      },*/
+      },
     ]
   },
   /*{
