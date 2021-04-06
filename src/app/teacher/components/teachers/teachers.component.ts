@@ -4,11 +4,11 @@ import { Character } from './../../../core/models/character.model';
 import { CharactersService } from './../../../core/services/characters/characters.service';
 
 @Component({
-  selector: 'app-students',
-  templateUrl: './students.component.html',
-  styleUrls: ['./students.component.css']
+  selector: 'app-teachers',
+  templateUrl: './teachers.component.html',
+  styleUrls: ['./teachers.component.css']
 })
-export class StudentsComponent implements OnInit {
+export class TeachersComponent implements OnInit {
 
   characters: Character[] = [];
 
@@ -21,7 +21,7 @@ export class StudentsComponent implements OnInit {
   }
 
   fetchCharacters() {
-    this.charactersService.getAllStudents()
+    this.charactersService.getAllTeachers()
     .subscribe(characters => {
       this.characters = characters;
     });

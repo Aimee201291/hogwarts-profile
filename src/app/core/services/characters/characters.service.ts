@@ -21,4 +21,8 @@ export class CharactersService {
   getAllStudents() {
     return this.http.get<Character[]>(`${environment.url_api}/students`);
   }
+
+  getAllTeachers() {
+    return this.http.get<Character[]>(`${environment.url_api}/staff`);
+  }
 }
