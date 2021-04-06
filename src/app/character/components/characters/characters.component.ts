@@ -11,6 +11,8 @@ import { CharactersService } from './../../../core/services/characters/character
 export class CharactersComponent implements OnInit {
 
   characters: Character[] = [];
+  houses: string[] = ["slytherin", "gryffindor", "ravenclaw", "hufflepuff"];
+  selectedHouse = 'gryffindor';
 
   constructor(
     private charactersService: CharactersService
@@ -22,6 +24,13 @@ export class CharactersComponent implements OnInit {
 
   fetchCharacters() {
     this.charactersService.getAllCharacters()
+    .subscribe(characters => {
+      this.characters = characters;
+    });
+  }
+
+  fetchCharactersByHouse(selectedHouse: string) {
+    this.charactersService.getCharactersByHouse(this.selectedHouse)
     .subscribe(characters => {
       this.characters = characters;
     });

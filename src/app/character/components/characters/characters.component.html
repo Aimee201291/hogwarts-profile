@@ -2,9 +2,14 @@
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
-				<div class="row">
-					<div class="col-sm-6">
+				<div class="row mt-4 pb-4">
+					<div class="col-sm-10">
 						<h2><b>Personajes</b></h2>
+					</div>
+					<div class="col-sm-2">
+						<select class="form-control" [(ngModel)]="selectedHouse" (ngModelChange)="fetchCharactersByHouse(selectedHouse)">
+							<option *ngFor="let house of houses" [value]="house">{{ house }}</option>
+						</select>
 					</div>
 				</div>
             </div>

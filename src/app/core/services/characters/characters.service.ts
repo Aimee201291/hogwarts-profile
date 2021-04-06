@@ -5,6 +5,8 @@ import { Character } from './../../models/character.model';
 
 import { environment } from './../../../../environments/environment';
 
+import { CharactersComponent } from './../../../character/components/characters/characters.component';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,5 +26,9 @@ export class CharactersService {
 
   getAllTeachers() {
     return this.http.get<Character[]>(`${environment.url_api}/staff`);
+  }
+
+  getCharactersByHouse(selectedHouse: string) {
+    return this.http.get<Character[]>(`${environment.url_api}/house/${selectedHouse}`);
   }
 }
